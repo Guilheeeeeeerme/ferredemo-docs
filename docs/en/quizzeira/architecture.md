@@ -1,5 +1,7 @@
 # Quizzeira architecture
 
+<div class="flow-explainer"><img src="/atlas/quizzeira-flow.svg" alt="Quizzeira content and study flow." /><div><h3>How it works</h3><p>Discovery, content, and study are independent planes joined by an explicit evaluation gate.</p></div></div>
+
 <span class="status status-verified">VERIFIED</span> Three planes: **Discovery**, **Content**, **Study**. Workers use **runLoop** intervals — not BullMQ.
 
 ```mermaid

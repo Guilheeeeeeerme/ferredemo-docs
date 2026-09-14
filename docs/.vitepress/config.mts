@@ -106,6 +106,7 @@ function sidebarPt() {
 }
 
 export default defineConfig({
+  appearance: false,
   base: '/ferredemo-docs/',
   title: 'Ferre Ecosystem',
   description:

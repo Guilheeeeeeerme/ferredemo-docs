@@ -42,3 +42,34 @@ test('theme exposes a persistent header locale switcher and root-only redirect',
   assert.match(redirect, /shouldRedirectRoot/)
   assert.match(switcher, /ferre-docs-locale/)
 })
+
+test('atlas pages and diagrams expose accessible visual documentation', async () => {
+  const files = [
+    '../docs/public/atlas/system-map.svg',
+    '../docs/public/atlas/promptdesk-flow.svg',
+    '../docs/public/atlas/quizzeira-flow.svg',
+    '../docs/public/atlas/argus-flow.svg',
+  ]
+  const diagrams = await Promise.all(files.map((file) => readFile(new URL(file, import.meta.url), 'utf8')))
+  const [englishHome, portugueseHome] = await Promise.all([
+    readFile(new URL('../docs/en/index.md', import.meta.url), 'utf8'),
+    readFile(new URL('../docs/pt/index.md', import.meta.url), 'utf8'),
+  ])
+
+  diagrams.forEach((diagram) => {
+    assert.match(diagram, /<title(?:\s|>)/)
+    assert.match(diagram, /<desc(?:\s|>)/)
+  })
+  ;[englishHome, portugueseHome].forEach((home) => {
+    assert.match(home, /atlas-hero/)
+    assert.match(home, /\/atlas\/system-map\.svg/)
+  })
+})
+
+test('atlas stylesheet provides the dark accessible design system', async () => {
+  const css = await readFile(new URL('../docs/.vitepress/theme/custom.css', import.meta.url), 'utf8')
+  assert.match(css, /--atlas-surface-base:\s*#10131A/i)
+  assert.match(css, /--atlas-surface-raised:\s*#11122F/i)
+  assert.match(css, /--atlas-accent:\s*#030036/i)
+  assert.match(css, /prefers-reduced-motion/)
+})

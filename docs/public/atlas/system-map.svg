@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" role="img" aria-labelledby="title desc">
+  <title id="title">Ferre ecosystem shared infrastructure map</title><desc id="desc">PromptDesk, Quizzeira, and Argus connect to shared data and observability; PromptDesk and Argus use the Headroom LLM proxy while Quizzeira intentionally does not.</desc>
+  <style>text{font-family:Inter,Arial,sans-serif;fill:#e3e4ea}.k{fill:#11122f;stroke:#3b4261;stroke-width:2}.p{fill:#10131a;stroke:#a3d4ad;stroke-width:2}.l{stroke:#a3d4ad;stroke-width:3;fill:none}.d{stroke:#878a91;stroke-width:3;stroke-dasharray:8 8;fill:none}.m{fill:#a3d4ad;font-size:16px}.h{font-size:24px;font-weight:700}.s{fill:#b5b6c4;font-size:15px}</style>
+  <rect width="1200" height="600" rx="16" fill="#10131a"/><text x="56" y="58" class="h">One operating plane. Three independent products.</text><text x="56" y="86" class="s">Shared infrastructure, not a product API mesh.</text>
+  <rect x="60" y="150" width="250" height="120" rx="12" class="p"/><text x="86" y="195" class="h">PromptDesk</text><text x="86" y="224" class="s">AI customer support</text>
+  <rect x="60" y="320" width="250" height="120" rx="12" class="p"/><text x="86" y="365" class="h">Quizzeira</text><text x="86" y="394" class="s">Exam study system</text>
+  <rect x="60" y="490" width="250" height="80" rx="12" class="p"/><text x="86" y="538" class="h">Argus</text>
+  <rect x="520" y="110" width="300" height="110" rx="12" class="k"/><text x="548" y="155" class="h">infra_data</text><text x="548" y="184" class="s">Postgres · Redis · MinIO</text>
+  <rect x="520" y="270" width="300" height="110" rx="12" class="k"/><text x="548" y="315" class="h">infra_llm</text><text x="548" y="344" class="s">Headroom proxy</text>
+  <rect x="520" y="430" width="300" height="110" rx="12" class="k"/><text x="548" y="475" class="h">infra_obs</text><text x="548" y="504" class="s">Loki · Alloy · Grafana</text>
+  <path d="M310 200H520M310 370H520M310 530H520" class="l"/><path d="M310 200H430V325H520M310 530H430V325H520" class="l"/><path d="M310 370H520" class="d"/><text x="350" y="355" class="m">Headroom OFF by design</text>
+  <path d="M310 200H460V485H520M310 370H460V485H520M310 530H520" class="l"/>
+  <text x="880" y="160" class="m">VERIFIED</text><text x="880" y="320" class="m">PromptDesk + Argus</text><text x="880" y="480" class="m">shared telemetry</text>
+</svg>

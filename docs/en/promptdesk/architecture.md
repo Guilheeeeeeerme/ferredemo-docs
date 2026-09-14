@@ -1,5 +1,7 @@
 # PromptDesk architecture
 
+<div class="flow-explainer"><img src="/atlas/promptdesk-flow.svg" alt="PromptDesk support request flow." /><div><h3>How it works</h3><p>A support request becomes a guarded worker job, then a ranked model response and visible status update.</p></div></div>
+
 <span class="status status-verified">VERIFIED</span> NestJS API + BullMQ chat-worker + dual Postgres + Redis + Socket.IO status fan-out. Admin (web) and Support MFE are separate Vite apps.
 
 ```mermaid

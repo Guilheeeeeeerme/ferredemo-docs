@@ -1,5 +1,7 @@
 # Argus architecture
 
+<div class="flow-explainer"><img src="/atlas/argus-flow.svg" alt="Argus vision triage flow." /><div><h3>How it works</h3><p>Frames become evidence for a live multimodal evaluation before a human triage decision.</p></div></div>
+
 <span class="status status-verified">VERIFIED</span> Vision pipeline → API → admin/triage MFEs. Product i18n: **en + pt-BR**.
 
 ```mermaid

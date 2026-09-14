@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { computed } from 'vue'
-import { useRoute } from 'vitepress'
+import { useRoute, withBase } from 'vitepress'
 import { localizedPath } from '../locale-routing.mjs'
 
 const route = useRoute()
 const currentLocale = computed(() => route.path.match(/^\/(pt|en)(?:\/|$)/)?.[1] ?? 'pt')
 
 function targetPath(locale: 'pt' | 'en') {
-  return localizedPath(route.path, locale)
+  return withBase(localizedPath(route.path, locale))
 }
 
 function remember(locale: 'pt' | 'en') {

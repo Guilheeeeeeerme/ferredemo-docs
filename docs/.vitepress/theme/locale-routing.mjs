@@ -7,7 +7,11 @@ export function preferredLocale({ storedLocale, browserLanguage } = {}) {
 
 export function localizedPath(pathname, locale) {
   const target = supportedLocales.has(locale) ? locale : 'pt'
-  return pathname.replace(/^\/(en|pt)(?=\/|$)/, `/${target}`)
+  const cleanPath = pathname.replace(/^\/ferredemo-docs(?=\/|$)/, '') || '/'
+  if (!/^\/(en|pt)(?=\/|$)/.test(cleanPath)) {
+    return `/${target}${cleanPath === '/' ? '/' : cleanPath}`
+  }
+  return cleanPath.replace(/^\/(en|pt)(?=\/|$)/, `/${target}`)
 }
 
 export function shouldRedirectRoot(pathname) {

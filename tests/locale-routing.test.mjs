@@ -23,6 +23,9 @@ test('maps a documentation page to its equivalent locale', () => {
   assert.equal(localizedPath('/en/argus/architecture', 'pt'), '/pt/argus/architecture')
   assert.equal(localizedPath('/pt/quizzeira/architecture', 'en'), '/en/quizzeira/architecture')
   assert.equal(localizedPath('/en/', 'pt'), '/pt/')
+  assert.equal(localizedPath('/', 'en'), '/en/')
+  assert.equal(localizedPath('/argus/architecture', 'en'), '/en/argus/architecture')
+  assert.equal(localizedPath('/ferredemo-docs/pt/argus/architecture', 'en'), '/en/argus/architecture')
 })
 
 test('redirects only the root route', () => {
@@ -41,6 +44,7 @@ test('theme exposes a persistent header locale switcher and root-only redirect',
 
   assert.match(layout, /LocaleSwitcher/)
   assert.match(redirect, /shouldRedirectRoot/)
+  assert.match(redirect, /withBase/)
   assert.match(switcher, /ferre-docs-locale/)
 })
 

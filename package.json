@@ -5,6 +5,7 @@
   "version": "1.0.0",
   "description": "Shared technical docs for PromptDesk, Quizzeira, and Argus",
   "scripts": {
+    "test": "node --test tests/*.test.mjs",
     "dev": "vitepress dev docs",
     "build": "vitepress build docs",
     "preview": "vitepress preview docs"

@@ -8,10 +8,10 @@ import {
   shouldRedirectRoot,
 } from '../docs/.vitepress/theme/locale-routing.mjs'
 
-test('uses Portuguese as the fallback locale', () => {
-  assert.equal(preferredLocale({ browserLanguage: 'pt-BR' }), 'pt')
-  assert.equal(preferredLocale({ browserLanguage: 'en-US' }), 'pt')
-  assert.equal(preferredLocale({ browserLanguage: undefined }), 'pt')
+test('uses English as the fallback locale', () => {
+  assert.equal(preferredLocale({ browserLanguage: 'pt-BR' }), 'en')
+  assert.equal(preferredLocale({ browserLanguage: 'en-US' }), 'en')
+  assert.equal(preferredLocale({ browserLanguage: undefined }), 'en')
 })
 
 test('uses an explicit persisted language preference', () => {
@@ -77,4 +77,13 @@ test('atlas stylesheet provides the dark accessible design system', async () => 
   assert.match(css, /--atlas-surface-raised:\s*#11122F/i)
   assert.match(css, /--atlas-accent:\s*#030036/i)
   assert.match(css, /prefers-reduced-motion/)
+})
+
+test('AI Engineering guides exist in both languages and cover core concepts', async () => {
+  const pages = await Promise.all(['en', 'pt'].map((locale) => readFile(new URL(`../docs/${locale}/ai-engineering/index.md`, import.meta.url), 'utf8')))
+  pages.forEach((page) => {
+    for (const concept of ['Prompt Engineering', 'RAG', 'chunk', 'vector', 'eval', 'guardrail']) {
+      assert.match(page.toLowerCase(), new RegExp(concept.toLowerCase()))
+    }
+  })
 })

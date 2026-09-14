@@ -2,7 +2,7 @@ const supportedLocales = new Set(['pt', 'en'])
 
 export function preferredLocale({ storedLocale, browserLanguage } = {}) {
   if (supportedLocales.has(storedLocale)) return storedLocale
-  return browserLanguage?.toLowerCase().startsWith('pt') ? 'pt' : 'pt'
+  return 'en'
 }
 
 export function localizedPath(pathname, locale) {

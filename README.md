@@ -18,8 +18,8 @@ Project Pages base path: `/ferredemo-docs/`.
 
 ## Language and atlas navigation
 
-The root route chooses Portuguese (`/pt/`) for Brazilian Portuguese and every
-unknown browser locale. The persistent **PT / EN** switch in the header records
+The root route chooses English (`/en/`) for every browser locale unless the
+visitor has made an explicit saved language choice. The persistent **PT / EN** switch in the header records
 an explicit preference and keeps the equivalent documentation page when one
 exists. Both locales provide the same visual Technical Atlas: product flows,
 the shared operating map, and audit-status concepts.

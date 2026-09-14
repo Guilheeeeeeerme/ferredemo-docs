@@ -14,6 +14,7 @@ function sidebarEn() {
         { text: 'Observability', link: '/en/standards/observability' },
       ],
     },
+    { text: 'AI Engineering', link: '/en/ai-engineering/' },
     {
       text: 'PromptDesk',
       items: [
@@ -74,6 +75,7 @@ function sidebarPt() {
         { text: 'Observabilidade', link: '/pt/standards/observability' },
       ],
     },
+    { text: 'AI Engineering', link: '/pt/ai-engineering/' },
     {
       text: 'PromptDesk',
       items: [
@@ -126,6 +128,7 @@ export default defineConfig({
         nav: [
           { text: 'Overview', link: '/en/' },
           { text: 'Standards', link: '/en/standards/guardrails' },
+          { text: 'AI Engineering', link: '/en/ai-engineering/' },
           { text: 'PromptDesk', link: '/en/promptdesk/architecture' },
           { text: 'Quizzeira', link: '/en/quizzeira/architecture' },
           { text: 'Argus', link: '/en/argus/architecture' },
@@ -143,6 +146,7 @@ export default defineConfig({
         nav: [
           { text: 'Visão geral', link: '/pt/' },
           { text: 'Padrões', link: '/pt/standards/guardrails' },
+          { text: 'AI Engineering', link: '/pt/ai-engineering/' },
           { text: 'PromptDesk', link: '/pt/promptdesk/architecture' },
           { text: 'Quizzeira', link: '/pt/quizzeira/architecture' },
           { text: 'Argus', link: '/pt/argus/architecture' },

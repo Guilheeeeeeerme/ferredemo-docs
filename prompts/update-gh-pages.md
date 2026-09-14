@@ -11,7 +11,9 @@ may be stale.
 seeds, or Quizzeira Headroom-on without evidence.
 
 Product repos stay pure — never re-host this multi-product site inside
-`promptdesk`, `argus`, `quizzeira`, or `infra`.
+`promptdesk`, `argus`, `quizzeira`, or `infra`. Thin product-local copies of
+this prompt also live at `docs/prompts/update-gh-pages.md` in those three
+app repos (they still instruct agents to edit and deploy **this** repo).
 
 ## 1. Identify relevant commits / diffs
 

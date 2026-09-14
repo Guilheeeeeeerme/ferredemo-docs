@@ -11,5 +11,5 @@ export function localizedPath(pathname, locale) {
 }
 
 export function shouldRedirectRoot(pathname) {
-  return pathname === '/'
+  return pathname === '/' || pathname === '/ferredemo-docs/'
 }

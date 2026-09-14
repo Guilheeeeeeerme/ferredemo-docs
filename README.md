@@ -16,6 +16,14 @@ npm run build
 
 Project Pages base path: `/ferredemo-docs/`.
 
+## Language and atlas navigation
+
+The root route chooses Portuguese (`/pt/`) for Brazilian Portuguese and every
+unknown browser locale. The persistent **PT / EN** switch in the header records
+an explicit preference and keeps the equivalent documentation page when one
+exists. Both locales provide the same visual Technical Atlas: product flows,
+the shared operating map, and audit-status concepts.
+
 ## Deploy
 
 GitHub Actions workflow `.github/workflows/deploy-pages.yml` builds and deploys via `actions/deploy-pages`.

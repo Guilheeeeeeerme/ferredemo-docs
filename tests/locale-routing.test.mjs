@@ -27,6 +27,7 @@ test('maps a documentation page to its equivalent locale', () => {
 
 test('redirects only the root route', () => {
   assert.equal(shouldRedirectRoot('/'), true)
+  assert.equal(shouldRedirectRoot('/ferredemo-docs/'), true)
   assert.equal(shouldRedirectRoot('/en/'), false)
   assert.equal(shouldRedirectRoot('/pt/argus/architecture'), false)
 })

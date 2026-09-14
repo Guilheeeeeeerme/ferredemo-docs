@@ -118,6 +118,16 @@ export default defineConfig({
   ignoreDeadLinks: true,
   markdown: {
     theme: { light: 'github-light', dark: 'github-dark' },
+    config(md) {
+      const defaultFence = md.renderer.rules.fence!
+      md.renderer.rules.fence = (tokens, index, options, env, self) => {
+        const token = tokens[index]
+        if (token.info.trim() === 'mermaid') {
+          return `<Mermaid chart="${encodeURIComponent(token.content)}" />`
+        }
+        return defaultFence(tokens, index, options, env, self)
+      }
+    },
   },
   locales: {
     en: {

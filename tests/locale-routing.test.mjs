@@ -79,6 +79,14 @@ test('atlas stylesheet provides the dark accessible design system', async () => 
   assert.match(css, /prefers-reduced-motion/)
 })
 
+test('Mermaid blocks are transformed into the client renderer', async () => {
+  const config = await readFile(new URL('../docs/.vitepress/config.mts', import.meta.url), 'utf8')
+  const theme = await readFile(new URL('../docs/.vitepress/theme/index.ts', import.meta.url), 'utf8')
+  assert.match(config, /Mermaid/)
+  assert.match(config, /renderer\.rules\.fence/)
+  assert.match(theme, /Mermaid/)
+})
+
 test('AI Engineering guides exist in both languages and cover core concepts', async () => {
   const pages = await Promise.all(['en', 'pt'].map((locale) => readFile(new URL(`../docs/${locale}/ai-engineering/index.md`, import.meta.url), 'utf8')))
   pages.forEach((page) => {

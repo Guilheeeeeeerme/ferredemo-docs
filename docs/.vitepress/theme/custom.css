@@ -63,6 +63,9 @@ body { text-rendering: optimizeLegibility; }
 .flow-explainer img { width: 100%; }
 .flow-explainer h3 { margin: 0; color: var(--atlas-text); }
 .flow-explainer p { margin: 8px 0; color: var(--atlas-muted); }
+.mermaid-diagram { margin: 24px 0; padding: 22px; overflow-x: auto; border: 1px solid var(--atlas-line); border-radius: 9px; background: var(--atlas-surface-raised); }
+.mermaid-diagram svg { display: block; min-width: 680px; max-width: 100%; height: auto; margin: 0 auto; }
+.mermaid-error { color: #fecaca; }
 
 .status { display: inline-block; margin-right: 5px; padding: 3px 6px; border-radius: 4px; font-size: 12px; font-weight: 700; vertical-align: middle; }
 .status-verified { color: #102816; background: var(--atlas-success); }
